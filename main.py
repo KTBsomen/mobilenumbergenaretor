@@ -1,5 +1,6 @@
 import random
-#file=open('jio-num.txt','a+')
+import os
+#file=open('jio-num.txt','w')
 #this is very simple code, you can change this according
 #to your need but the change should comited to this repo.
 df=[]
@@ -20,12 +21,14 @@ for i in range(1001):
 	
 
 
-print(len(df))
+#print(len(df))
 r=list(set(df))
 print('len of main num',len(r))
-print(r)
-'''for i in range(len(r)):
-	
-	print(list(r)[i],file=file)
-file.close()
-'''
+#print(r)
+for i in range(len(r)):
+	print("sending message to",r[i])
+	os.system("termux-sms-send -n %s %s"%(list(r)[i],"Grow your Business now! or make some money online its very easy with webnima team find us on https://webxm.ml/business/ or https://webxm.rf.gd/ share this message to everyone to help them to Grow their business"))
+	print("message sent")
+#file.close()
+
+
